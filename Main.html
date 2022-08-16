@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href='/'>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/5a117b07b0.js" crossorigin="anonymous"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.3/angular-ui-router.js"
+        integrity="sha512-Uc14dgIloA0NXRNlh/tP2jiAsm4SD0IOOFBaBAleJqeKiMJNZg3l8ho714lfsCWc9oTQ5mvRpMg9tLcmOf40DQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- LazyLoad Cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/oclazyload/1.1.0/ocLazyLoad.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./Main.css">
+</head>
+
+<body ng-app="myApp">
+    <div class="container-fluid" ng-controller="myController">
+        <div class="row main">
+            <div class="vertical-navbar col-sm-2" ng-class="{'isNavCollapsed':isNavCollapsed}">
+                <div class="navbar-upper row">
+                    <div class="pb-wrapper row">
+                        <img src="https://www.patientbond.com/hubfs/PB_LOGO_041718_Small@2x.png" class="pb-logo"  ng-class="{'isNavCollapsed':isNavCollapsed}">
+                        <span class="pb-name" ng-if="!isNavCollapsed"> PatientBond</span>
+                    </div>
+                    <div class="profile-wrapper row"  ng-class="{'isNavCollapsed':isNavCollapsed}">
+                        <img src="./user.jpg" class="col-sm-4"
+                            ng-class="{'user-image-small':isNavCollapsed,'user-image-large':!isNavCollapsed ,'isNavCollapsed':isNavCollapsed}" />
+                        <span class="navbar-user-name-wrapper col-sm-5" ng-if="!isNavCollapsed">
+                            Kevin &nbsp;<i class="fa-solid fa-sort-down"></i>
+                        </span>
+                    </div>
+                </div>
+                <hr ng-if="!isNavCollapsed"/>
+                <div class="navbar-lower row">
+                    <div class="navigation-wrapper row">
+                        <div class="navigation-heading-wrapper row" ng-if="!isNavCollapsed">
+                            <span class="navigation-heading">Navigation</span>
+                        </div>
+                        <div class="navigation-routes row" ng-repeat="items in navRouteHeading" ng-click="classActive(items)" ng-class="{'isNavCollapsed':isNavCollapsed ,'vertical-nav-active':items.active}">
+                            <a ui-sref="{{items.name}}">
+                                <span class="vertical-navigation-logo col-sm-2" style="text-align:center">
+                                    <i ng-class="{'{{items.icon}}':true, '{{items.name}}':true}"></i>
+                                </span>
+                                <span class="vertical-nav col-sm-10" ng-if="!isNavCollapsed">
+                                    {{items.name}}
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-wrapper col-sm-10" ng-class="{'isNavCollapsed':isNavCollapsed}">
+                <div class="user-header-wrapper ">
+                    <div class="user-header-icons-wrapper ">
+                        <span class="navbar-toggle-button header-icons" style="margin-left:0px;"
+                            ng-click="isNavCollapsed = !isNavCollapsed">
+                            <i class="fa-solid fa-caret-left" ng-class="{'isNavCollapsed':!isNavCollapsed}" ng-if="!isNavCollapsed"></i>
+                            <i class="fa-solid fa-bars"></i></span>
+                        <span class="user-icon header-icons"><i class="fa-regular fa-user"></i></span>
+                    </div>
+                    <div class="user-header-username-wrapper">
+                        <span class="notification-icon header-icons"><i class="fa-regular fa-bell"></i></span>
+                        <span class="username header-icons">Kevin <i class="fa-solid fa-sort-down"></i></span>
+                        <span class="user-image-wrapper header-icons">
+                            <img src="./user.jpg" class="user-image-small" />
+                        </span>
+                    </div>
+                </div>
+                <div class="intervention-wrapper row" ui-view>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+<div class="footer row" style="padding:10px; font-size:10px; width:100%; background:rgb(240 240 240);">
+            <i class="fa fa-copyright" aria-hidden="true" style="font-size:8px;"></i> 2021 Copyright
+        </div>
+</body>
+<script src="./app.js"></script>
+<script type="text/javascript" src="./Main.js"></script>
+<script src="./Routes/Home/Home.js"></script>
+<script type="text/javascript" src="./Routes/Intervention/Intervention.js"></script>
+
+
+</html>
