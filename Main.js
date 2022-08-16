@@ -84,5 +84,5 @@ app.controller("myController", function ($scope) {
     for (let i = 0; i < $scope.navRouteHeading.length; ++i)
       $scope.navRouteHeading[i].active = false;
     obj.active = true;
-  }
+  };
 });

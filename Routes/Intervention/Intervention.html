@@ -233,7 +233,7 @@
                         <div class="journey row" ng-repeat="items in patientJourney">
                             <div class="j{{items.count}}" ng-class="{'{{items.class}}':true}">
                                 <div class="span-wrapper">
-                                    <span class="icon" uib-popover-template ="dynamicPopover.templateUrl"
+                                    <span class="icon" uib-popover-template="dynamicPopover.templateUrl"
                                         popover-placement="right" popover-trigger="focus">
                                         <i class="{{items.icons}}"></i>
                                     </span>
@@ -290,17 +290,17 @@
                                 </div>
                                 <div class="option-wrapper row">
                                     <label ng-class="{'label-color':items.yes}">
-                                        <span class="radio-yes"ng-if="items.yes">
-                                        <i class="fa-solid fa-check"></i></span>
-                                        <input type="radio" ng-model="response" ng-if="!items.yes" ng-click="labelColor(items,'y')"
-                                            value="Yes">Yes
+                                        <span class="radio-yes" ng-if="items.yes">
+                                            <i class="fa-solid fa-check"></i></span>
+                                        <input type="radio" ng-model="response" ng-if="!items.yes"
+                                            ng-click="labelColor(items,'y')" value="Yes">Yes
                                     </label>
                                     <label ng-class="{'label-color':items.no}">
                                         <span class="radio-no" ng-if="items.no">
-                                        <i class="fa-solid fa-xmark"></i>
+                                            <i class="fa-solid fa-xmark"></i>
                                         </span>
-                                        <input type="radio" ng-model="response" ng-if="!items.no" ng-click="labelColor(items,'n')"
-                                            value="No"> No
+                                        <input type="radio" ng-model="response" ng-if="!items.no"
+                                            ng-click="labelColor(items,'n')" value="No"> No
                                     </label>
                                 </div>
                             </div>

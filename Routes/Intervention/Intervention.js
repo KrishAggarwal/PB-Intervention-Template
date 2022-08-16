@@ -1,5 +1,4 @@
 app.controller("interventionController", function ($scope) {
-  
   $scope.patients = [
     {
       image: "./user.jpg",
@@ -322,19 +321,6 @@ app.controller("interventionController", function ($scope) {
   };
   $scope.assignClasses();
   console.log($scope.patientJourney);
-  // $scope.patientJourney = [
-  //   { icon: "", action: "Email Sent", Time: new Date() },
-  //   { icon: "", action: "Survey", Time: new Date() },
-  //   { icon: "", action: "Email Sent", Time: new Date() },
-  //   { icon: "", action: "PhoneCall", Time: new Date() },
-  //   { icon: "", action: "Email Sent", Time: new Date() },
-  //   { icon: "", action: "SMS Sent", Time: new Date() },
-  //   { icon: "", action: "Email Sent", Time: new Date() },
-  //   { icon: "", action: "Phone Call", Time: new Date() },
-  //   { icon: "", action: "Email Sent", Time: new Date() },
-  //   { icon: "", action: "SMS Sent", Time: new Date() },
-  //   { icon: "", action: "Phone Call", Time: new Date() },
-  // ];
   $scope.surveyQuestions = [
     {
       number: 1,
@@ -358,25 +344,7 @@ app.controller("interventionController", function ($scope) {
       no: false,
     },
   ];
-  // $scope.options = [
-  //   {
-  //     action: "Email Sent",
-  //     icon: "fa-solid fa-id-card",
-  //     dateOfTreatment: "08-09-2022",
-  //     Location: "New York",
-  //     visitDate: "08-09-2022",
-  //     surveyDate: "08-09-2022",
-  //     program: "HRA",
-  //     status: "Opened",
-  //     type: "Type",
-  //     memberCellNumber: "4564536345",
-  //     locationId: "34562345",
-  //     interventionDateTime: "08-09-2022",
-  //     providerDesignation: "Doctor",
-  //     gender: "Male",
-  //     visitId: "dasf4325",
-  //   },
-  // ];
+
 
   $scope.add = function () {
     $scope.patientJourney.push({
@@ -414,9 +382,5 @@ app.controller("interventionController", function ($scope) {
       obj.no = true;
       obj.yes = false;
     }
-
-    // res.yes == false
-    //   ? ((res.yes = true), (res.no = false))
-    //   : ((res.yes = false), (res.no = true));
   };
 });

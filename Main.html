@@ -27,10 +27,11 @@
             <div class="vertical-navbar col-sm-2" ng-class="{'isNavCollapsed':isNavCollapsed}">
                 <div class="navbar-upper row">
                     <div class="pb-wrapper row">
-                        <img src="https://www.patientbond.com/hubfs/PB_LOGO_041718_Small@2x.png" class="pb-logo"  ng-class="{'isNavCollapsed':isNavCollapsed}">
+                        <img src="https://www.patientbond.com/hubfs/PB_LOGO_041718_Small@2x.png" class="pb-logo"
+                            ng-class="{'isNavCollapsed':isNavCollapsed}">
                         <span class="pb-name" ng-if="!isNavCollapsed"> PatientBond</span>
                     </div>
-                    <div class="profile-wrapper row"  ng-class="{'isNavCollapsed':isNavCollapsed}">
+                    <div class="profile-wrapper row" ng-class="{'isNavCollapsed':isNavCollapsed}">
                         <img src="./user.jpg" class="col-sm-4"
                             ng-class="{'user-image-small':isNavCollapsed,'user-image-large':!isNavCollapsed ,'isNavCollapsed':isNavCollapsed}" />
                         <span class="navbar-user-name-wrapper col-sm-5" ng-if="!isNavCollapsed">
@@ -38,13 +39,15 @@
                         </span>
                     </div>
                 </div>
-                <hr ng-if="!isNavCollapsed"/>
+                <hr ng-if="!isNavCollapsed" />
                 <div class="navbar-lower row">
                     <div class="navigation-wrapper row">
                         <div class="navigation-heading-wrapper row" ng-if="!isNavCollapsed">
                             <span class="navigation-heading">Navigation</span>
                         </div>
-                        <div class="navigation-routes row" ng-repeat="items in navRouteHeading" ng-click="classActive(items)" ng-class="{'isNavCollapsed':isNavCollapsed ,'vertical-nav-active':items.active}">
+                        <div class="navigation-routes row" ng-repeat="items in navRouteHeading"
+                            ng-click="classActive(items)"
+                            ng-class="{'isNavCollapsed':isNavCollapsed ,'vertical-nav-active':items.active}">
                             <a ui-sref="{{items.name}}">
                                 <span class="vertical-navigation-logo col-sm-2" style="text-align:center">
                                     <i ng-class="{'{{items.icon}}':true, '{{items.name}}':true}"></i>
@@ -62,7 +65,8 @@
                     <div class="user-header-icons-wrapper ">
                         <span class="navbar-toggle-button header-icons" style="margin-left:0px;"
                             ng-click="isNavCollapsed = !isNavCollapsed">
-                            <i class="fa-solid fa-caret-left" ng-class="{'isNavCollapsed':!isNavCollapsed}" ng-if="!isNavCollapsed"></i>
+                            <i class="fa-solid fa-caret-left" ng-class="{'isNavCollapsed':!isNavCollapsed}"
+                                ng-if="!isNavCollapsed"></i>
                             <i class="fa-solid fa-bars"></i></span>
                         <span class="user-icon header-icons"><i class="fa-regular fa-user"></i></span>
                     </div>
@@ -78,11 +82,11 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
-<div class="footer row" style="padding:10px; font-size:10px; width:100%; background:rgb(240 240 240);">
-            <i class="fa fa-copyright" aria-hidden="true" style="font-size:8px;"></i> 2021 Copyright
-        </div>
+    <div class="footer row" style="padding:10px; font-size:10px; width:100%; background:rgb(240 240 240);">
+        <i class="fa fa-copyright" aria-hidden="true" style="font-size:8px;"></i> 2021 Copyright
+    </div>
 </body>
 <script src="./app.js"></script>
 <script type="text/javascript" src="./Main.js"></script>
