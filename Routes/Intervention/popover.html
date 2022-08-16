@@ -1,0 +1,131 @@
+<div class="row popover-wrapper">
+    <div class="action-detail col-sm-3">
+        <span class="icon">
+            <i ng-class="{'{{items.icons}}':true}"></i>
+        </span>
+        <span class="popover-action">
+            <span class="treatment-detail-text-heading">{{items.text}}</span>
+            <span class="treatment-detail-text-text">{{items.options.dateOfTreatment}} </span>
+        </span>
+    </div>
+    <div class="all-actions col-sm-9">
+        <div class="popover-row popover-row1">
+            <div class="popover-patient-details col-sm-4">
+                <span class="popover-details-icon col-sm-2">
+                    <i class="fa-solid fa-location-dot"></i>
+                </span>
+                <span class="popover-patient-heading col-sm-10">
+                    <span>Location</span>
+                    <span>{{items.options.location}}</span>
+                </span>
+            </div>
+            <div class="popover-patient-details col-sm-4">
+                <span class="popover-details-icon col-sm-2 col-sm-2 ">
+                    <i class="fa-regular fa-calendar-check"></i>
+                </span>
+                <span class="popover-patient-heading col-sm-10 ">
+                    <span>Visit Date</span>
+                    <span>{{items.options.dateOfTreatment}}</span>
+                </span>
+            </div>
+            <div class="popover-patient-details col-sm-4">
+                <span class="popover-details-icon col-sm-2">
+                    <i class="fa-regular fa-calendar-check"></i>
+                </span>
+                <span class="popover-patient-heading col-sm-10">
+                    <span>Survey Date</span>
+                    <span>{{items.options.dateOfTreatment}}</span>
+                </span>
+            </div>
+        </div>
+        <div class="popover-row popover-row2">
+            <div class="popover-patient-details col-sm-4">
+                <span class="popover-details-icon col-sm-2">
+                    <i class="fa-solid fa-computer"></i>
+                </span>
+                <span class="popover-patient-heading col-sm-10">
+                    <span>Program</span>
+                    <span>{{items.options.program}}</span>
+                </span>
+            </div>
+            <div class="popover-patient-details col-sm-4">
+                <span class="popover-details-icon col-sm-2">
+                    <i class="fa-solid fa-star"></i>
+                </span>
+                <span class="popover-patient-heading col-sm-10">
+                    <span>Status</span>
+                    <span>{{items.options.status}}</span>
+                </span>
+            </div>
+            <div class="popover-patient-details col-sm-4">
+                <span class="popover-details-icon col-sm-2">
+                    <i class="fa-solid fa-sitemap"></i>
+                </span>
+                <span class="popover-patient-heading col-sm-10">
+                    <span>Type</span>
+                    <span>{{items.options.type}}</span>
+                </span>
+            </div>
+        </div>
+        <div class="popover-row popover-row3">
+            <div class="popover-patient-details col-sm-4">
+                <span class="popover-details-icon col-sm-2">
+                    <i class="fa-solid fa-phone"></i>
+                </span>
+                <span class="popover-patient-heading col-sm-10">
+                    <span>Cell Number</span>
+                    <span>{{items.options.memberCellNumber}}</span>
+                </span>
+            </div>
+            <div class="popover-patient-details col-sm-4">
+                <span class="popover-details-icon col-sm-2">
+                    <i class="fa-solid fa-location-dot"></i>
+
+                </span>
+                <span class="popover-patient-heading col-sm-10">
+                    <span>Location ID</span>
+                    <span>{{items.options.locationId}}</span>
+                </span>
+            </div>
+            <div class="popover-patient-details col-sm-4">
+                <span class="popover-details-icon col-sm-2">
+                    <i class="fa-regular fa-calendar-check"></i>
+
+                </span>
+                <span class="popover-patient-heading col-sm-10">
+                    <span>Intervention Date</span>
+                    <span>{{items.options.interventionDateTime}}</span>
+                </span>
+            </div>
+        </div>
+        <div class="popover-row popover-row4">
+            <div class="popover-patient-details col-sm-4">
+                <span class="popover-details-icon col-sm-2">
+                    <i class="fa-solid fa-user-tag"></i>
+                </span>
+                <span class="popover-patient-heading col-sm-10">
+                    <span>Designation</span>
+                    <span>{{items.options.providerDesignation}}</span>
+                </span>
+            </div>
+            <div class="popover-patient-details col-sm-4">
+                <span class="popover-details-icon col-sm-2">
+                    <i class="fa-solid fa-mars-and-venus"></i>
+                </span>
+                <span class="popover-patient-heading col-sm-10">
+                    <span>Gender</span>
+                    <span>{{items.options.gender}}</span>
+                </span>
+            </div>
+            <div class="popover-patient-details col-sm-4">
+                <span class="popover-details-icon col-sm-2">
+                    <i class="fa-solid fa-id-card"></i>
+                </span>
+                <span class="popover-patient-heading col-sm-10">
+                    <span>Visit ID</span>
+                    <span>{{items.options.visitId}}</span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

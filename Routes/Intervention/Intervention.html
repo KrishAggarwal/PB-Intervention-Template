@@ -1,0 +1,313 @@
+<div class="intervention-header-wrapper row">
+    <span class="intervention-heading col-sm-12">Interventions</span>
+</div>
+<div class="intervention-content-wrapper row" style="display:flex">
+    <div class="intervention-list-wrapper col-sm-3">
+        <div class="intervention-list-header-wrapper row">
+            <span class="intervention-list-heading">Intervention List</span>
+            <span class="intervention-list-heading-icon"><i class="fa-solid fa-rotate"></i></span>
+        </div>
+
+        <div class="intervention-status-wrapper row">
+            <div class="intervention-open-wrapper intervention-status-heading col-sm-6">
+                <span class="intervention-open">Open</span>
+            </div>
+            <div class="intervention-completed-wrapper intervention-status-heading col-sm-6">
+                <span class="intervention-completed">Completed</span>
+            </div>
+        </div>
+        <div class="intervention-search-wrapper row">
+            <div class="row" style="display:flex">
+                <div class="input-group col-sm-12" style="display:flex">
+                    <span class="intervention-search-icon col-sm-1">
+                        <i class="fa-solid fa-magnifying-glass" style="margin:auto;"></i>
+                    </span>
+                    <input type="text" placeholder="Search" class="intervention-search-input col-sm-11" />
+                </div>
+            </div>
+        </div>
+        <div class="patient-details-wrapper row" style="padding:0 10px;">
+            <div class="patient-header row">
+                <div class="col-sm-6 ">
+                    Name</div>
+                <div class="col-sm-6">
+                    Information</div>
+            </div>
+            <div class="patient-data-wrapper row" style="background-color:white;">
+                <div class="patient-data row" ng-repeat="items in patients">
+                    <div class="col-sm-6 pt-name">
+                        <div class="col-sm-4">
+                            <img ng-src={{items.image}} class="user-image-small">
+                        </div>
+                        <div class="col-sm-8">
+                            <p style="font-size:10px;">{{items.name}}</p>
+                            <p style="font-size:9px;">{{items.profession}}</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 patient-treatment"
+                        style="font-size:10px; display: flex;flex-direction:column;align-items:flex-start">
+                        <div style="display:flex;"><span style="padding-right:5px;"><i class="fa-solid fa-box"
+                                    style="color:rgb(228 155 104);"></i>
+                            </span><span>{{items.disease}}</span></div>
+                        <div style="display:flex;"><span style="padding-right:5px;"><i class="fa-solid fa-box"
+                                    style="color:rgb(83 198 234);"></i>
+                            </span><span>{{items.dateOfTreatment}}</span></div>
+                        <div style="display:flex;"><span style="padding-right:5px;"><i class="fa-solid fa-box"
+                                    style="color:rgb(234 70 80)"></i>
+                            </span> <span>{{items.priority}}</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="pagination row" style="text-align:right; width: 100%;">
+                <ul uib-pagination total-items="bigTotalItems" items-per-page="itemsPerPage" ng-model="bigCurrentPage"
+                    max-size="maxSize" class="pagination-sm" boundary-links="true" num-pages="numPages"
+                    previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+            </div>
+        </div>
+
+    </div>
+    <div class="intervention-details-wrapper col-sm-9">
+        <div class="intervention-details-header-wrapper">
+            <div class="intervention-details-header col-3">
+                <span>Details</span>
+            </div>
+            <div class="intervention-details-button-wrapper col-9">
+                <div type="button" class="intervention-details-button unbookmark"><span class="button-icon"><i
+                            class="fa-solid fa-star"></i></span><span class="button-text">UnBookmark</span></div>
+                <div type="button" class="intervention-details-button inprogress"><span class="button-icon"><i
+                            class="fa-solid fa-star"></i></span><span class="button-text">In
+                        Progress</span></div>
+                <div type="button" class="intervention-details-button transfer"><span class="button-icon"><i
+                            class="fa-solid fa-arrow-right-arrow-left"></i></span><span
+                        class="button-text">Transfer</span></div>
+                <div type="button" class="intervention-details-button save"><span class="button-icon"><i
+                            class="fa-solid fa-file-lines"></i></span><span class="button-text">Save</span></div>
+                <div type="button" class="intervention-details-button complete"><span class="button-icon"><i
+                            class="fa-solid fa-check"></i></span><span class="button-text">Complete</span></div>
+            </div>
+        </div>
+        <div class="intervention-status-wrapper hello row">
+            <div class="col-sm-2 interventions-details-tabs intervention-status-heading">
+                <span class="">
+                    Intervention Details
+                </span>
+            </div>
+            <div class="col-sm-2 member-details-tabs intervention-status-heading">
+                <span class="">
+                    Members Details
+                </span>
+            </div>
+        </div>
+        <div class="intervention-patient-wrapper row" style="padding: 5px;">
+            <div class="intervention-patient-details-wrapper row">
+                <div class="col-sm-4 patient-profile-wrapper">
+                    <div class="col-sm-4 patient-image-wrapper">
+                        <img src="./user.jpg" class="user-image-large col-sm-12" />
+                    </div>
+                    <span class="col-sm-8 patient-name-wrapper">
+                        <p class="patient-name">Amelia Dawsun</p>
+                        <p class="patient-profession">Priority Juggler</p>
+                    </span>
+                </div>
+                <div class="col-sm-8 patient-treatment-details-wrapper">
+                    <div class="row patient-treatment-row patient-treatment-row1"
+                        style="border-bottom:2px solid #f2f2f2">
+                        <div class="treatment-detail col-sm-3 intervention-id">
+                            <span class="intervention-id-icon treatment-detail-icon">
+                                <i class="fa-solid fa-id-card"></i>
+                            </span>
+                            <span class="intervention-id-text treatment-detail-text">
+                                <p class="treatment-detail-text-heading">Intervention Id</p>
+                                <p class="treatment-detail-text-text">54365346546</p>
+                            </span>
+                        </div>
+                        <div class="treatment-detail col-sm-2 type">
+                            <span class="intervention-id-icon treatment-detail-icon">
+                                <i class="fa-solid fa-id-card"></i>
+                            </span>
+                            <span class="intervention-id-text treatment-detail-text">
+                                <p class="treatment-detail-text-heading">Type</p>
+                                <p class="treatment-detail-text-text">54365346546</p>
+                            </span>
+                        </div>
+                        <div class="treatment-detail col-sm-2 sub-type">
+                            <span class="intervention-id-icon treatment-detail-icon">
+                                <i class="fa-solid fa-id-card"></i>
+                            </span>
+                            <span class="intervention-id-text treatment-detail-text">
+                                <p class="treatment-detail-text-heading">Sub-Type</p>
+                                <p class="treatment-detail-text-text">54365346546</p>
+                            </span>
+                        </div>
+                        <div class="treatment-detail col-sm-2 reason"><span
+                                class="intervention-id-icon treatment-detail-icon">
+                                <i class="fa-solid fa-id-card"></i>
+                            </span>
+                            <span class="intervention-id-text treatment-detail-text">
+                                <p class="treatment-detail-text-heading">Reason</p>
+                                <p class="treatment-detail-text-text">54365346546</p>
+                            </span>
+                        </div>
+                        <div class="treatment-detail col-sm-3 date-created"><span
+                                class="intervention-id-icon treatment-detail-icon">
+                                <i class="fa-solid fa-id-card"></i>
+                            </span>
+                            <span class="intervention-id-text treatment-detail-text">
+                                <p class="treatment-detail-text-heading">Date-Created</p>
+                                <p class="treatment-detail-text-text">54365346546</p>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row patient-treatment-row patient-treatment-row2">
+                        <div class="treatment-detail col-sm-3 status "><span
+                                class="intervention-id-icon treatment-detail-icon">
+                                <i class="fa-solid fa-id-card"></i>
+                            </span>
+                            <span class="intervention-id-text treatment-detail-text">
+                                <p class="treatment-detail-text-heading">Status</p>
+                                <p class="treatment-detail-text-text">54365346546</p>
+                            </span>
+                        </div>
+                        <div class="treatment-detail col-sm-2 priority"><span
+                                class="intervention-id-icon treatment-detail-icon">
+                                <i class="fa-solid fa-id-card"></i>
+                            </span>
+                            <span class="intervention-id-text treatment-detail-text">
+                                <p class="treatment-detail-text-heading">Priority</p>
+                                <p class="treatment-detail-text-text">54365346546</p>
+                            </span>
+                        </div>
+                        <div class="treatment-detail col-sm-2 date-assigned"><span
+                                class="intervention-id-icon treatment-detail-icon">
+                                <i class="fa-solid fa-id-card"></i>
+                            </span>
+                            <span class="intervention-id-text treatment-detail-text">
+                                <p class="treatment-detail-text-heading">Date Assigned</p>
+                                <p class="treatment-detail-text-text">54365346546</p>
+                            </span>
+                        </div>
+                        <div class="treatment-detail col-sm-2 assigned-to"><span
+                                class="intervention-id-icon treatment-detail-icon">
+                                <i class="fa-solid fa-id-card"></i>
+                            </span>
+                            <span class="intervention-id-text treatment-detail-text">
+                                <p class="treatment-detail-text-heading">Assigned To</p>
+                                <p class="treatment-detail-text-text">54365346546</p>
+                            </span>
+                        </div>
+                        <div class="treatment-detail col-sm-3 due-date"><span
+                                class="intervention-id-icon treatment-detail-icon">
+                                <i class="fa-solid fa-id-card"></i>
+                            </span>
+                            <span class="intervention-id-text treatment-detail-text">
+                                <p class="treatment-detail-text-heading">Due Date</p>
+                                <p class="treatment-detail-text-text">54365346546</p>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="intervention-patient-tabs-wrapper row">
+                <div class="col-sm-4 intervention-patient-tabs context"><i class="fa-solid fa-share-nodes"></i>
+                    <p>Context</p>
+                </div>
+                <div class="col-sm-4 intervention-patient-tabs psychographic-guidence"><i
+                        class="fa-regular fa-snowflake"></i>
+                    <p>Psychographic Guidance</p>
+                </div>
+                <div class="col-sm-4 intervention-patient-tabs activity-log"><i class="fa-regular fa-file-lines"></i>
+                    <p>Activity Log</p>
+                </div>
+            </div>
+            <!-- <button uib-popover-html="htmlPopover" class="btn btn-default">HTML Popover</button>
+                                            popover-trigger="'focus'" -->
+            <div class="intervention-patient-tab-data row">
+                <div class="col-sm-5 patient-node-map" style="background:white;padding:5px !important;">
+                    <div class="add-btn-wrapper col-sm-2">
+                        <button type="button" class="btn addNode " ng-click="add()"
+                            style="background:rgb(35 183 229);color:white;padding:5px !important">
+                            <i class="fa-solid fa-filter"></i>
+                        </button>
+                    </div>
+                    <div class="journey-wrapper col-sm-8">
+                        <div class="journey row" ng-repeat="items in patientJourney">
+                            <div class="j{{items.count}}" ng-class="{'{{items.class}}':true}">
+                                <div class="span-wrapper">
+                                    <span class="icon" uib-popover-template ="dynamicPopover.templateUrl"
+                                        popover-placement="right" popover-trigger="focus">
+                                        <i class="{{items.icons}}"></i>
+                                    </span>
+                                    <span class="info-wrapper">
+                                        <span class="line"></span>
+                                        <span class="circle"></span>
+                                        <span class="info">
+                                            <p>{{items.text}}</p>
+                                            <p>{{items.date}}</p>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-7 patient-survey-wrapper">
+                    <div class="survey-heading-wrapper row">
+                        <i class="fa-solid fa-file-lines"></i>
+                        <span>Survey</span>
+                    </div>
+                    <div class="survey-sent-wrapper row">
+                        <span><i class="fa-solid fa-robot"></i></span>
+                        <span>
+                            <p>Sent on October 09 2021 04:44 PM</p>
+                            <p>Performed on October 09 2021 04:44 PM</p>
+                        </span>
+                    </div>
+                    <div class="survey-taken row">
+                        <span><img src="./user.jpg" class="user-image-small" width="25px" height="25px"></span>
+                        <span class="action-taken">
+                            <p>Action Taken</p>
+                            <p class="cancer"><span>Breast Cancer:Having</span><span>Breast
+                                    Cancer:Having</span><span>Breast Cancer:Having</span></p>
+                            <p class="dates" d><span><i class="fa-solid fa-calendar-days"></i>October 09, 2021 04:44
+                                    PM</span><span><i class="fa-solid fa-calendar-days"></i>October
+                                    09, 2021 04:44 PM</span><span><i class="fa-solid fa-calendar-days"></i>October 09,
+                                    2021 04:44
+                                    PM</span></p>
+                        </span>
+                    </div>
+                    <div class="survey-questions-wrapper row">
+                        <div class="survey-heading row">
+                            Breast Cancer Risk Assessment Survey
+                        </div>
+                        <div class="question-icon-wrapper row">
+                            <span class="question-icon"> <i class="fas fa-tasks"></i></span>
+                        </div>
+                        <div class="questions-wrapper row">
+                            <div class="que-one que row" ng-repeat="items in surveyQuestions" style="width:100%;">
+                                <div class="que-wrapper row"><span class="que-number">{{items.number}}</span><span
+                                        class="que-text">{{items.text}}</span><span
+                                        class="required">{{items.required}}</span>
+                                </div>
+                                <div class="option-wrapper row">
+                                    <label ng-class="{'label-color':items.yes}">
+                                        <span class="radio-yes"ng-if="items.yes">
+                                        <i class="fa-solid fa-check"></i></span>
+                                        <input type="radio" ng-model="response" ng-if="!items.yes" ng-click="labelColor(items,'y')"
+                                            value="Yes">Yes
+                                    </label>
+                                    <label ng-class="{'label-color':items.no}">
+                                        <span class="radio-no" ng-if="items.no">
+                                        <i class="fa-solid fa-xmark"></i>
+                                        </span>
+                                        <input type="radio" ng-model="response" ng-if="!items.no" ng-click="labelColor(items,'n')"
+                                            value="No"> No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
